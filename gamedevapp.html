@@ -1,0 +1,58 @@
+<!-- Game Developer Application -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Developer Application - GSRP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GSRP Game Developer Application</h1>
+        <form id="gameDevForm">
+            <label for="applicant">Your Discord Username</label>
+            <input type="text" id="applicant" name="applicant" placeholder="e.g., Username#1234" required>
+            
+            <label for="reason">Why do you want to become a game developer?</label>
+            <textarea id="reason" name="reason" placeholder="Tell us why..." rows="5" required></textarea>
+
+            <!-- 10 Questions for Game Developer -->
+            <label for="question1">What game development tools and engines are you experienced with?</label>
+            <textarea id="question1" name="question1" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question2">What programming languages do you use for game development?</label>
+            <textarea id="question2" name="question2" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question3">Have you worked with multiplayer game servers before?</label>
+            <textarea id="question3" name="question3" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question4">Can you describe a recent game project you've worked on?</label>
+            <textarea id="question4" name="question4" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question5">How do you approach debugging and optimizing games?</label>
+            <textarea id="question5" name="question5" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question6">Do you have experience with game graphics and design?</label>
+            <textarea id="question6" name="question6" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question7">Have you ever worked on a mod or game plugin? Describe your experience.</label>
+            <textarea id="question7" name="question7" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question8">What is your experience with version control tools like Git?</label>
+            <textarea id="question8" name="question8" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question9">How do you handle feedback and criticism on your game development work?</label>
+            <textarea id="question9" name="question9" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question10">What motivates you to apply for this position?</label>
+            <textarea id="question10" name="question10" placeholder="Your answer..." rows="3" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+        <div id="responseMessage"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!-- Staff Application -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Application - GSRP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GSRP Staff Application</h1>
+        <form id="staffForm">
+            <label for="applicant">Your Discord Username</label>
+            <input type="text" id="applicant" name="applicant" placeholder="e.g., Username#1234" required>
+            
+            <label for="reason">Why do you want to become staff?</label>
+            <textarea id="reason" name="reason" placeholder="Tell us why..." rows="5" required></textarea>
+
+            <!-- 10 Questions for Staff -->
+            <label for="question1">Why do you think you'd be a good fit for the staff team?</label>
+            <textarea id="question1" name="question1" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question2">Do you have any prior experience moderating or managing a community?</label>
+            <textarea id="question2" name="question2" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question3">How do you handle conflicts between users or staff members?</label>
+            <textarea id="question3" name="question3" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question4">How do you prioritize tasks in a fast-paced environment?</label>
+            <textarea id="question4" name="question4" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question5">How would you handle a situation where a user is breaking the rules?</label>
+            <textarea id="question5" name="question5" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question6">What do you think is the most important quality for a staff member to have?</label>
+            <textarea id="question6" name="question6" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question7">What are your communication skills like in both public and private settings?</label>
+            <textarea id="question7" name="question7" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question8">How would you assist users who are having technical issues?</label>
+            <textarea id="question8" name="question8" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question9">Are you comfortable making decisions that might be unpopular?</label>
+            <textarea id="question9" name="question9" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question10">What motivates you to apply for this position?</label>
+            <textarea id="question10" name="question10" placeholder="Your answer..." rows="3" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+        <div id="responseMessage"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

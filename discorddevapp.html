@@ -1,0 +1,58 @@
+<!-- Discord Developer Application -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Developer Application - GSRP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GSRP Discord Developer Application</h1>
+        <form id="discordDevForm">
+            <label for="applicant">Your Discord Username</label>
+            <input type="text" id="applicant" name="applicant" placeholder="e.g., Username#1234" required>
+            
+            <label for="reason">Why do you want to be a Discord Developer?</label>
+            <textarea id="reason" name="reason" placeholder="Tell us why..." rows="5" required></textarea>
+
+            <!-- 10 Questions for Discord Developer -->
+            <label for="question1">What previous experience do you have as a Discord Developer?</label>
+            <textarea id="question1" name="question1" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question2">What programming languages are you proficient in?</label>
+            <textarea id="question2" name="question2" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question3">Have you worked with Discord.js or any similar libraries before?</label>
+            <textarea id="question3" name="question3" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question4">What kind of bots have you developed in the past?</label>
+            <textarea id="question4" name="question4" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question5">How do you handle bugs and errors in your code?</label>
+            <textarea id="question5" name="question5" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question6">What is your experience with APIs and webhooks?</label>
+            <textarea id="question6" name="question6" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question7">Can you explain how you would handle large-scale bot deployments?</label>
+            <textarea id="question7" name="question7" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question8">How do you ensure the security of your Discord bot?</label>
+            <textarea id="question8" name="question8" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question9">Have you worked with other bot frameworks (like Python's discord.py)?</label>
+            <textarea id="question9" name="question9" placeholder="Your answer..." rows="3" required></textarea>
+
+            <label for="question10">What motivates you to apply for this position?</label>
+            <textarea id="question10" name="question10" placeholder="Your answer..." rows="3" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+        <div id="responseMessage"></div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
