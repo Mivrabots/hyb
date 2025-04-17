@@ -10,17 +10,43 @@ document.addEventListener('DOMContentLoaded', () => {
             dataObject[key] = value;  // Convert form data to a JSON object
         });
 
-        // Build the message for Discord webhook to show submitted answers
-        let messageContent = `**${formId} Application Submitted!**\n\n`;
+        // Build the embed message for Discord
+        const embed = {
+            title: `${formId} Application Submitted`,
+            fields: [],
+        };
 
-        // Add each question and answer to the message body
-        Object.keys(dataObject).forEach((key) => {
-            messageContent += `**${key}:** ${dataObject[key]}\n`; // Display the field and its value
+        // Add applicant and reason
+        embed.fields.push({
+            name: "Applicant",
+            value: dataObject.applicant,
+            inline: false,
         });
+
+        embed.fields.push({
+            name: "Reason for Application",
+            value: dataObject.reason,
+            inline: false,
+        });
+
+        // Add questions dynamically based on the names of the fields (question1, question2, etc.)
+        for (let i = 1; i <= 10; i++) {
+            const questionKey = `question${i}`;
+            const questionValue = dataObject[questionKey];
+
+            if (questionValue) {  // Only include the field if the value is provided
+                embed.fields.push({
+                    name: `Question ${i}`,
+                    value: questionValue,
+                    inline: false,
+                });
+            }
+        }
 
         const body = JSON.stringify({
             username: dataObject.applicant,  // User's Discord name from the form
-            content: messageContent,         // All the submitted answers
+            content: `${formId} Application Submitted!`,
+            embeds: [embed],
         });
 
         try {
