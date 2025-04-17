@@ -10,20 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
             dataObject[key] = value;  // Convert form data to a JSON object
         });
 
-        // Build embed message for Discord webhook
-        const embed = {
-            title: `${formId} Application Submitted`,
-            fields: Object.keys(dataObject).map((key) => ({
-                name: key,
-                value: dataObject[key],
-                inline: false,
-            })),
-        };
+        // Build the message for Discord webhook to show submitted answers
+        let messageContent = `**${formId} Application Submitted!**\n\n`;
+
+        // Add each question and answer to the message body
+        Object.keys(dataObject).forEach((key) => {
+            messageContent += `**${key}:** ${dataObject[key]}\n`; // Display the field and its value
+        });
 
         const body = JSON.stringify({
             username: dataObject.applicant,  // User's Discord name from the form
-            content: `${formId} Application Submitted!`,
-            embeds: [embed],
+            content: messageContent,         // All the submitted answers
         });
 
         try {
