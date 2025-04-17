@@ -10,41 +10,41 @@ document.addEventListener('DOMContentLoaded', () => {
             dataObject[key] = value;  // Convert form data to a JSON object
         });
 
-        // Build the embed message for Discord
+        // Build embed message for Discord webhook
         const embed = {
             title: `${formId} Application Submitted`,
             fields: [],
         };
 
-        // Add applicant and reason
+        // Add applicant and reason to the embed
         embed.fields.push({
             name: "Applicant",
-            value: dataObject.applicant,
+            value: dataObject.applicant || 'Not provided',
             inline: false,
         });
 
         embed.fields.push({
             name: "Reason for Application",
-            value: dataObject.reason,
+            value: dataObject.reason || 'Not provided',
             inline: false,
         });
 
-        // Add questions dynamically based on the names of the fields (question1, question2, etc.)
-        for (let i = 1; i <= 10; i++) {
-            const questionKey = `question${i}`;
-            const questionValue = dataObject[questionKey];
-
-            if (questionValue) {  // Only include the field if the value is provided
+        // Dynamically handle questions from the form
+        const formElements = event.target.elements;
+        for (let i = 0; i < formElements.length; i++) {
+            const field = formElements[i];
+            if (field.name.startsWith("question") && field.value.trim()) {  // Only process question fields with an answer
                 embed.fields.push({
-                    name: `Question ${i}`,
-                    value: questionValue,
+                    name: field.previousElementSibling.innerText || `Question ${i + 1}`,  // Use the label of the question
+                    value: field.value,
                     inline: false,
                 });
             }
         }
 
+        // Sending data to Discord
         const body = JSON.stringify({
-            username: dataObject.applicant,  // User's Discord name from the form
+            username: dataObject.applicant || 'Unknown',  // User's Discord name from the form
             content: `${formId} Application Submitted!`,
             embeds: [embed],
         });
